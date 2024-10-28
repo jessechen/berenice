@@ -1,10 +1,10 @@
-<script>
-	export let name;
-	export let color;
-	export let radius;
-	export let orbits;
-	export let distance;
-	export let time;
+<script lang="ts">
+	export let name: string;
+	export let color: string;
+	export let radius: number;
+	export let orbits: number;
+	export let distance: number;
+	export let time: number;
 
 	const TAU = 2 * Math.PI;
 	const CYCLE_TIME = 10_000;
@@ -12,12 +12,12 @@
  	$:cx = calculateX(time);
  	$:cy = calculateY(time);
 
- function calculateX(time) {
-	 return  Math.cos((time * TAU * orbits) / CYCLE_TIME) * distance + 500 ;
+ function calculateX(time: number): number {
+	 return Math.cos((time * TAU * orbits) / CYCLE_TIME) * distance + 500 ;
  }
 
- function calculateY(time) {
-	 return  Math.sin((time * TAU * orbits) / CYCLE_TIME) * distance + 500 ;
+ function calculateY(time: number): number {
+	 return Math.sin((time * TAU * orbits) / CYCLE_TIME) * distance + 500 ;
 
  }
 </script>

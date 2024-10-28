@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import Planet from './Planet.svelte';
 
-	const CYCLE_TIME = 10_000;
+	const CYCLE_TIME: number = 10_000;
 
-	let timeInput = 0;
-	let playing = true;
-	let buttonText = '⏸';
+	let timeInput: number = 0;
+	let playing: boolean = true;
+	let buttonText: string = '⏸';
 
 	onMount(async () =>	start());
 
@@ -22,8 +22,8 @@
 		}
 	}
 
-	function elapse(currentTime, lastTime) {
-		if (lastTime != null) {
+	function elapse(currentTime: number, lastTime?: number) {
+		if (lastTime !== undefined) {
 			timeInput += (currentTime - lastTime) / 10;
 			if (timeInput > CYCLE_TIME) {
 				timeInput = timeInput % CYCLE_TIME;
@@ -37,12 +37,12 @@
 <main>
 	<svg  viewBox="0 0 1000 1000"  xmlns="http://www.w3.org/2000/svg">
 		<circle id="HD 110067" cx="500" cy="500" r="50" fill="#fdb813" />
-		<Planet name="bat" color="blue" radius="22" orbits="54" distance="124" time="{timeInput}" />
-		<Planet name="cap" color="cyan" radius="24" orbits="36" distance="194" time="{timeInput}" />
-		<Planet name="drum" color="darkgreen" radius="29" orbits="24" distance="264" time="{timeInput}" />
-		<Planet name="each" color="teal" radius="19" orbits="16" distance="334" time="{timeInput}" />
-		<Planet name="fine" color="firebrick" radius="26" orbits="12" distance="404" time="{timeInput}" />
-		<Planet name="gust" color="grey" radius="26" orbits="9" distance="474" time="{timeInput}" />
+		<Planet name="bat" color="blue" radius={22} orbits={54} distance={124} time="{timeInput}" />
+		<Planet name="cap" color="cyan" radius={24} orbits={36} distance={194} time="{timeInput}" />
+		<Planet name="drum" color="darkgreen" radius={29} orbits={24} distance={264} time="{timeInput}" />
+		<Planet name="each" color="teal" radius={19} orbits={16} distance={334} time="{timeInput}" />
+		<Planet name="fine" color="firebrick" radius={26} orbits={12} distance={404} time="{timeInput}" />
+		<Planet name="gust" color="grey" radius={26} orbits={9} distance={474} time="{timeInput}" />
 	</svg>
 </main>
 <footer>
