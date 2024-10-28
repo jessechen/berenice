@@ -6,25 +6,22 @@ A visualization of the orbital periods of the six known planets as of 2024 aroun
 
 For more context check out https://exoplanets.nasa.gov/news/1771/discovery-alert-watch-the-synchronized-dance-of-a-6-planet-system/
 
-Production
-----------
+## Production
 
 https://sareenarazak.github.io/berenice/
 
-Dev Setup
----------
+## Dev Setup
 
 ```bash
 npm install
 npm run dev
 ```
 
-Deployment
-----------
+## Deployment
+
 `npm run gh-pages`
 
-License
--------
+## License
 
 MIT
 

@@ -11,14 +11,12 @@ const config = {
 			precompress: true,
 			fallback: '404.html',
 			strict: true
-
 		}),
 		paths: {
 			base: ''
 		},
 
-		appDir : "app"
-
+		appDir: 'app'
 	}
 };
 export default config;
